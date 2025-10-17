@@ -1,0 +1,64 @@
+<div class="container">
+  <h1>Control Flow Lesson</h1>
+
+  <!-- Ejercicio 1: Impares -->
+  <section>
+    <h2>Ejercicio 1 – Impares</h2>
+    <div class="pokemon-grid">
+      @for (id of pokemonIds; track id) {
+        @if (id % 2 !== 0) {
+          <div class="pokemon-card">
+            <img [src]="getPokemonImageUrl(id)" [alt]="'Pokemon ' + id">
+            <span>{{ id }}</span>
+          </div>
+        }
+      }
+    </div>
+  </section>
+
+  <!-- Ejercicio 2: Múltiplo de 3 -->
+  <section>
+    <h2>Ejercicio 2 – Múltiplo de 3</h2>
+    <div class="pokemon-grid">
+      @for (id of pokemonIds; track id) {
+        @if (id % 3 === 0) {
+          <div class="pokemon-card">
+            <img [src]="getPokemonImageUrl(id)" [alt]="'Pokemon ' + id">
+            <span>{{ id }}</span>
+          </div>
+        }
+      }
+    </div>
+  </section>
+
+  <!-- Ejercicio 3: Primer y Último -->
+  <section>
+    <h2>Ejercicio 3 – Primer y Último</h2>
+    <div class="pokemon-grid">
+      @for (id of pokemonIds; track id; let first = $first, last = $last) {
+        @if (first || last) {
+          <div class="pokemon-card">
+            <img [src]="getPokemonImageUrl(id)" [alt]="'Pokemon ' + id">
+            <span>{{ id }}</span>
+          </div>
+        }
+      }
+    </div>
+  </section>
+
+  <!-- Ejercicio 4: Números Primos -->
+  <section>
+    <h2>Ejercicio 4 – Números Primos</h2>
+    <div class="pokemon-grid">
+      @for (id of pokemonIds; track id) {
+        @if (isPrime(id)) {
+          <div class="pokemon-card">
+            <img [src]="getPokemonImageUrl(id)" [alt]="'Pokemon ' + id">
+            <span>{{ id }}</span>
+          </div>
+        }
+      }
+    </div>
+  </section>
+
+</div>
